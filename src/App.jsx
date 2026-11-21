@@ -66,6 +66,32 @@ export default function App() {
         </Container>
       </section>
 
+      {/* ============================ EXPERT ============================ */}
+      <section className="overflow-hidden pb-14 md:pb-20">
+        <Container>
+          <div className="mx-auto grid max-w-4xl items-center gap-6 md:grid-cols-2 md:gap-10">
+            <div className="mx-auto w-full max-w-md">
+              <img
+                src="/assets/eliane-hero.webp"
+                alt={c.expert.fotoAlt}
+                width="2000"
+                height="1227"
+                className="photo-fade w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="font-display text-sm font-bold uppercase tracking-wide text-accent">{c.expert.chamada}</p>
+              <H2 className="mt-2">{c.expert.nome}</H2>
+              <p className="mt-1 font-display text-lg font-bold text-ivory/80">{c.expert.titulo}</p>
+              <div className="mt-5 space-y-4 leading-relaxed text-ivory/85">
+                {c.expert.bio.map((b) => <p key={b}>{b}</p>)}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ======================== DATA E LOCAL ======================== */}
       <section className="bg-dark/50 py-14 md:py-20">
         <Container>

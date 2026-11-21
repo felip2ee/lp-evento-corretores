@@ -36,6 +36,17 @@ export const captura = {
     'Como ampliar seus ganhos com a intermediação imobiliária e de crédito.',
   ],
 
+  expert: {
+    chamada: 'Quem conduz o encontro',
+    nome: 'Eliane Moreira',
+    titulo: 'A Rainha do Crédito',
+    bio: [
+      'Mais de 16 anos no mercado financeiro e participação na estruturação de mais de R$ 400 milhões em operações de crédito aprovadas.',
+      'No encontro, ela mostra ao corretor como o banco enxerga o comprador, pra você identificar o risco antes de ele custar a sua venda.',
+    ],
+    fotoAlt: 'Eliane Moreira, a Rainha do Crédito, fazendo o gesto de dinheiro com as mãos',
+  },
+
   quando: {
     data: 'Quinta-feira, 26 de novembro',
     agenda: [
