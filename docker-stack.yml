@@ -1,0 +1,40 @@
+version: "3.8"
+
+# TROCAR antes do deploy: o domínio no Host().
+services:
+  lp-evento-corretores:
+    image: ghcr.io/felip2ee/lp-evento-corretores:latest
+    networks:
+      - RainhaNet
+    deploy:
+      mode: replicated
+      replicas: 2
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        order: start-first
+        failure_action: rollback
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=RainhaNet
+
+        # HTTPS
+        - traefik.http.routers.lp-evento-corretores.rule=Host(`evento.elianearainhadocredito.com`)
+        - traefik.http.routers.lp-evento-corretores.entrypoints=websecure
+        - traefik.http.routers.lp-evento-corretores.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.lp-evento-corretores.priority=1
+        - traefik.http.routers.lp-evento-corretores.service=lp-evento-corretores
+        - traefik.http.services.lp-evento-corretores.loadbalancer.server.port=80
+        - traefik.http.services.lp-evento-corretores.loadbalancer.passHostHeader=true
+
+networks:
+  RainhaNet:
+    external: true
+    name: RainhaNet
