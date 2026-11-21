@@ -6,7 +6,7 @@ export const captura = {
   tituloDestaque: 'suas vendas de imóveis em 2027?',
   selo: 'Edição especial para corretores de imóveis',
   subtitulo: 'Um encontro presencial com Eliane Moreira para quem quer vender melhor, entender o crédito e conquistar novas comissões.',
-  resumo: 'Terça-feira, 24 de novembro · 8h30 · Palmas (TO)',
+  resumo: 'Quinta-feira, 26 de novembro · 8h30 · Palmas (TO)',
   gratuito: 'Participação gratuita',
 
   form: {
@@ -15,7 +15,7 @@ export const captura = {
     enviando: 'Enviando...',
     erro: 'Não foi possível enviar agora. Tente de novo ou ligue pra 63 3215-7404.',
     sucessoTitulo: 'Presença registrada!',
-    sucesso: 'Esperamos você na terça-feira, 24 de novembro, às 8h30, na Galeria Rocha.',
+    sucesso: 'Esperamos você na quinta-feira, 26 de novembro, às 8h30, na Galeria Rocha.',
     privacidade: 'Seus dados são usados só pra falar com você sobre o evento.',
   },
 
@@ -27,7 +27,7 @@ export const captura = {
   ],
 
   quando: {
-    data: 'Terça-feira, 24 de novembro',
+    data: 'Quinta-feira, 26 de novembro',
     agenda: [
       { hora: '8h30', item: 'Café de boas-vindas' },
       { hora: '9h', item: 'Bate-papo estratégico' },

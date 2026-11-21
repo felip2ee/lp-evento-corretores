@@ -43,7 +43,7 @@ export default function LeadForm() {
           nome: dados.nome.trim(),
           whatsapp: dados.whatsapp.replace(/\D/g, ''),
           imobiliaria: dados.imobiliaria.trim(),
-          evento: 'cha-com-a-rainha-corretores-2026-11-24',
+          evento: 'cha-com-a-rainha-corretores-2026-11-26',
           pagina: window.location.href, // leva junto os UTMs da URL
           enviadoEm: new Date().toISOString(),
         }),
