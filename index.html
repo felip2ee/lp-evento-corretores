@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <!-- GTM é carregado em src/main.jsx a partir de VITE_GTM_ID (.env) -->
+    <!-- GTM é carregado em src/main.jsx a partir de VITE_GTM_ID (variável do container, via /env.js) -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,6 +27,8 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Config em runtime (GTM, webhook, WhatsApp). Tem que vir antes do app. -->
+    <script src="/env.js"></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

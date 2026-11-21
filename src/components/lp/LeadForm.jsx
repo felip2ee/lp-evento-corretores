@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { captura } from '../../content';
 import { Button, Field } from './ui';
+import { WEBHOOK_URL as WEBHOOK, WHATSAPP_URL as WHATSAPP } from '../../env';
 
 const f = captura.form;
-const WEBHOOK = import.meta.env.VITE_WEBHOOK_URL;
-const WHATSAPP = import.meta.env.VITE_WHATSAPP_URL;
 
 // (63) 99999-9999 conforme a pessoa digita
 export function mascaraTelefone(v) {

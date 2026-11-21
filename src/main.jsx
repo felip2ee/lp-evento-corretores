@@ -8,10 +8,10 @@ import '@fontsource/open-sans/latin-400.css'
 import '@fontsource/open-sans/latin-600.css'
 import '@fontsource/open-sans/latin-700.css'
 import './index.css'
+import { GTM_ID as gtmId } from './env'
 
-// GTM: o container vem do .env (VITE_GTM_ID). Sem ID, nada é carregado.
+// GTM: o container vem de VITE_GTM_ID. Sem ID, nada é carregado.
 window.dataLayer = window.dataLayer || []
-const gtmId = import.meta.env.VITE_GTM_ID
 if (gtmId) {
   window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' })
   const s = document.createElement('script')

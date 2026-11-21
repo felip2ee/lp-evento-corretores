@@ -10,7 +10,10 @@ RUN npm run build
 
 # Runtime
 FROM nginx:1.27-alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Template: o entrypoint do nginx roda envsubst e gera o conf.d/default.conf.
+# Os ENV vazios garantem que as variáveis existam mesmo sem nada definido na stack.
+ENV VITE_GTM_ID="" VITE_WEBHOOK_URL="" VITE_WHATSAPP_URL=""
+COPY nginx.conf /etc/nginx/templates/default.conf.template
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80

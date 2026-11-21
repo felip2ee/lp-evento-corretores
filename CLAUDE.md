@@ -7,12 +7,11 @@ Página de captura do evento presencial de quinta-feira, 26 de novembro de 2026,
 - `npm install` → `npm run dev` → `npm run build` (gera `dist/`).
 - Deploy: Dockerfile (node → nginx), `.github/workflows/docker-image.yml` publica `ghcr.io/felip2ee/lp-evento-corretores` a cada push na `main`, `docker-stack.yml` sobe no Swarm (Portainer) atrás do Traefik, rede `RainhaNet`.
 
-## .env (lido no build, não em runtime)
-As variáveis `VITE_` entram no bundle na hora do `npm run build`. Mudou o `.env`: commit, push, esperar a imagem nova e atualizar o serviço. Não adianta definir variável de ambiente na stack do Portainer. Por isso o `.env` é versionado; nada ali é segredo.
-- `VITE_SITE_URL`: domínio público, sem barra no fim. Monta a URL absoluta da capa de compartilhamento (`public/og-cha-corretores.jpg`, 1200x630) no `index.html`.
-- `VITE_GTM_ID`: container do GTM. Vazio = GTM não carrega (`src/main.jsx`).
-- `VITE_WEBHOOK_URL`: recebe o lead por POST JSON. Vazio = formulário mostra erro.
-- `VITE_WHATSAPP_URL`: destino depois do envio. Vazio = só a confirmação na página.
+## Configuração
+- **Runtime (stack no Portainer):** `VITE_GTM_ID`, `VITE_WEBHOOK_URL`, `VITE_WHATSAPP_URL`. São variáveis de ambiente do container. O `nginx.conf` é um template: na subida o nginx gera `/env.js` com esses valores (`window.__ENV`), lido em `src/env.js`. Mudou o valor: atualizar a stack, sem build novo. O `docker-stack.yml` precisa do bloco `environment:` repassando as três.
+  - `VITE_GTM_ID` vazio = GTM não carrega. `VITE_WEBHOOK_URL` vazio = formulário mostra erro. `VITE_WHATSAPP_URL` vazio = só a confirmação na página.
+- **Build (`.env`, versionado):** `VITE_SITE_URL`, domínio público sem barra no fim. Monta a URL absoluta da capa de compartilhamento (`public/og-cha-corretores.jpg`, 1200x630) no `index.html`. Mudou: commit, push e imagem nova.
+- **Dev:** `public/env.js` vem vazio e valem os valores do `.env` local.
 
 ## Onde mexer
 - **Toda a copy está em `src/content.js`.**

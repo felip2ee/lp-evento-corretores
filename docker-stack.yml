@@ -1,9 +1,13 @@
 version: "3.8"
 
-# TROCAR antes do deploy: o domínio no Host().
 services:
   lp-evento-corretores:
     image: ghcr.io/felip2ee/lp-evento-corretores:latest
+    # Valores definidos em Environment variables da stack no Portainer
+    environment:
+      - VITE_GTM_ID=${VITE_GTM_ID}
+      - VITE_WEBHOOK_URL=${VITE_WEBHOOK_URL}
+      - VITE_WHATSAPP_URL=${VITE_WHATSAPP_URL}
     networks:
       - RainhaNet
     deploy:
