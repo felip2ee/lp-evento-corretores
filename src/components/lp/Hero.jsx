@@ -16,8 +16,8 @@ export default function Hero({ eyebrow, titulo, tituloDestaque, children }) {
             className="hero-in mx-auto h-48 w-auto sm:h-60"
             fetchpriority="high"
           />
-          <h1 className="hero-in mt-5 font-display text-xl font-bold uppercase leading-tight tracking-wide text-ivory/90 sm:text-3xl md:text-4xl">
-            {titulo} <span className="text-accent">{tituloDestaque}</span>
+          <h1 className="hero-in mt-5 font-display text-2xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-4xl md:text-5xl">
+            {titulo} <span className="block text-[1.5em] leading-none text-accent">{tituloDestaque}</span>
           </h1>
           {children}
         </div>

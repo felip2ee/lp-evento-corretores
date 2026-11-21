@@ -2,10 +2,10 @@
 
 export const captura = {
   eyebrow: 'Chá com a Rainha do Crédito',
-  titulo: 'Como o crédito pode aumentar',
-  tituloDestaque: 'suas vendas de imóveis em 2027?',
+  titulo: 'Como duplicar suas comissões com crédito',
+  tituloDestaque: 'em 2027',
   selo: 'Edição especial para corretores de imóveis',
-  subtitulo: 'Você acha o imóvel, convence o cliente, fecha a proposta. Aí o banco nega o crédito e a sua comissão vai embora junto. Venha ver com Eliane Moreira o que observar antes de a venda cair.',
+  subtitulo: 'Você acha o imóvel, convence o cliente, fecha a proposta. Aí o banco nega o crédito e a sua comissão vai embora junto. Venha ver com Eliane Moreira como fazer de 2027 o ano em que o crédito trabalha a favor da sua venda.',
   resumo: 'Quinta-feira, 26 de novembro · 8h30 · Palmas (TO)',
   gratuito: 'Participação gratuita',
 
@@ -29,7 +29,7 @@ export const captura = {
   doresFecho: 'Muita venda não cai por causa do imóvel.',
   doresFechoDestaque: 'Cai no crédito. E os sinais costumam aparecer bem antes.',
 
-  temasTitulo: 'O que você vai levar do encontro',
+  temasTitulo: 'O que você vai levar pra 2027',
   temas: [
     'Como preparar melhor o comprador e reduzir o risco de perder a venda.',
     'Protocolo de aprovação: o que observar antes de encaminhar o crédito.',
@@ -59,8 +59,8 @@ export const captura = {
   },
   contato: { texto: '63 3215-7404', href: 'tel:+556332157404' },
 
-  fechamento: 'Um encontro para quem quer vender melhor,',
-  fechamentoDestaque: 'entender o crédito e conquistar novas comissões.',
+  fechamento: 'Não entre em 2027 perdendo venda no crédito.',
+  fechamentoDestaque: 'Entre sabendo como duplicar suas comissões com ele.',
 };
 
 export const rodape = {
