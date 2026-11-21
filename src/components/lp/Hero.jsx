@@ -23,8 +23,14 @@ export default function Hero({ eyebrow, titulo, tituloDestaque, children }) {
 
       <Container>
         <div className="mx-auto -mt-12 max-w-2xl pb-12 text-center sm:-mt-16">
-          <p className="hero-in font-display text-[1.75rem] font-extrabold uppercase tracking-wide text-white sm:text-4xl md:text-5xl">{eyebrow}</p>
-          <h1 className="hero-in mt-1 font-display text-xl font-bold uppercase leading-tight tracking-wide text-ivory/90 sm:text-3xl md:text-4xl">
+          <img
+            src="/assets/logo-cha-com-a-rainha.webp"
+            alt={eyebrow}
+            width="612"
+            height="660"
+            className="hero-in relative mx-auto mt-10 h-40 w-auto sm:mt-14 sm:h-52"
+          />
+          <h1 className="hero-in mt-4font-display text-xl font-bold uppercase leading-tight tracking-wide text-ivory/90 sm:text-3xl md:text-4xl">
             {titulo} <span className="text-accent">{tituloDestaque}</span>
           </h1>
           {children}

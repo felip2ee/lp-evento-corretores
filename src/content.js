@@ -5,7 +5,7 @@ export const captura = {
   titulo: 'Como o crédito pode aumentar',
   tituloDestaque: 'suas vendas de imóveis em 2027?',
   selo: 'Edição especial para corretores de imóveis',
-  subtitulo: 'Um encontro presencial com Eliane Moreira para quem quer vender melhor, entender o crédito e conquistar novas comissões.',
+  subtitulo: 'Você acha o imóvel, convence o cliente, fecha a proposta. Aí o banco nega o crédito e a sua comissão vai embora junto. Venha ver com Eliane Moreira o que observar antes de a venda cair.',
   resumo: 'Quinta-feira, 26 de novembro · 8h30 · Palmas (TO)',
   gratuito: 'Participação gratuita',
 
@@ -19,7 +19,17 @@ export const captura = {
     privacidade: 'Seus dados são usados só pra falar com você sobre o evento.',
   },
 
-  temasTitulo: 'O que você vai ver no encontro',
+  doresTitulo: 'Isso já aconteceu com você?',
+  dores: [
+    'Semanas de visita e negociação, e o financiamento reprovado na reta final.',
+    'Cliente que parecia certo e sumiu depois da resposta do banco.',
+    'Você só descobre o problema no crédito quando já estava contando com a venda.',
+    'Comissão perdida por um detalhe que dava pra ver no primeiro atendimento.',
+  ],
+  doresFecho: 'Muita venda não cai por causa do imóvel.',
+  doresFechoDestaque: 'Cai no crédito. E os sinais costumam aparecer bem antes.',
+
+  temasTitulo: 'O que você vai levar do encontro',
   temas: [
     'Como preparar melhor o comprador e reduzir o risco de perder a venda.',
     'Protocolo de aprovação: o que observar antes de encaminhar o crédito.',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CalendarDays, MapPin, Phone } from 'lucide-react';
 import { captura as c } from './content';
-import { Container, Button, H2 } from './components/lp/ui';
+import { Container, Button, H2, XItem } from './components/lp/ui';
 import Hero from './components/lp/Hero';
 import LeadForm from './components/lp/LeadForm';
 import Footer from './components/lp/Footer';
@@ -35,6 +35,21 @@ export default function App() {
           <LeadForm />
         </div>
       </Hero>
+
+      {/* ============================ DORES ============================ */}
+      <section className="pt-14 md:pt-20">
+        <Container>
+          <div className="mx-auto max-w-2xl">
+            <H2 className="text-center">{c.doresTitulo}</H2>
+            <ul className="mt-8 space-y-4">
+              {c.dores.map((d) => <XItem key={d}>{d}</XItem>)}
+            </ul>
+            <p className="mt-8 rounded-2xl border border-accent/40 bg-primary/40 p-6 text-center font-display text-lg font-bold text-white sm:text-xl">
+              {c.doresFecho} <span className="text-accent">{c.doresFechoDestaque}</span>
+            </p>
+          </div>
+        </Container>
+      </section>
 
       {/* ============================ TEMAS ============================ */}
       <section className="py-14 md:py-20">
