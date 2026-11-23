@@ -39,7 +39,7 @@ export const captura = {
   oQueE: {
     titulo: 'O que é o Chá com a Rainha do Crédito',
     texto: [
-      'É um encontro presencial em Palmas, em clima de café, onde Eliane Moreira senta com um grupo pequeno e abre o jogo sobre crédito.',
+      'É um encontro presencial em Palmas, em clima de café, onde Eliane Moreira senta com os convidados e abre o jogo sobre crédito.',
       'Nada de palestra engessada. É conversa direta, com exemplos reais e espaço pra você tirar as suas dúvidas na hora.',
       'Esta edição é dedicada a corretores de imóveis.',
     ],
@@ -54,7 +54,7 @@ export const captura = {
     nome: 'Eliane Moreira',
     titulo: 'A Rainha do Crédito',
     bio: [
-      'Mais de 16 anos no mercado financeiro e participação na estruturação de mais de R$ 400 milhões em operações de crédito aprovadas.',
+      'Mais de 16 anos no mercado financeiro e R$ 500 milhões em crédito faturado.',
       'No encontro, ela mostra ao corretor como o banco enxerga o comprador, pra você identificar o risco antes de ele custar a sua venda.',
     ],
     fotoAlt: 'Eliane Moreira, a Rainha do Crédito, fazendo o gesto de dinheiro com as mãos',

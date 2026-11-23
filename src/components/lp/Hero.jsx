@@ -1,19 +1,11 @@
 import React from 'react';
 import { Container } from './ui';
 
-// Topo: logo pequena do evento, foto da Eliane sumindo pro fundo, título e o que a página coloca embaixo (children).
+// Topo: foto da Eliane sumindo pro fundo, nome do evento, título e o que a página coloca embaixo (children).
 export default function Hero({ eyebrow, fotoAlt, titulo, tituloDestaque, children }) {
   return (
     <section className="relative overflow-hidden">
-      <img
-        src="/assets/logo-cha-com-a-rainha.webp"
-        alt={eyebrow}
-        width="612"
-        height="660"
-        className="hero-in mx-auto mt-5 h-20 w-auto sm:h-24"
-      />
-
-      <div className="mx-auto flex w-full max-w-2xl justify-center overflow-hidden">
+      <div className="mx-auto flex w-full max-w-2xl justify-center overflow-hidden pt-4 sm:pt-6">
         <img
           src="/assets/eliane-hero.webp"
           alt={fotoAlt}
@@ -26,7 +18,8 @@ export default function Hero({ eyebrow, fotoAlt, titulo, tituloDestaque, childre
 
       <Container>
         <div className="mx-auto -mt-12 max-w-2xl pb-12 text-center sm:-mt-16">
-          <h1 className="hero-in relative font-display text-2xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-4xl md:text-5xl">
+          <p className="hero-in relative font-display text-sm font-bold uppercase tracking-[0.18em] text-accent sm:text-base">{eyebrow}</p>
+          <h1 className="hero-in relative mt-2 font-display text-2xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-4xl md:text-5xl">
             {titulo} <span className="block text-[1.5em] leading-none text-accent">{tituloDestaque}</span>
           </h1>
           {children}

@@ -83,7 +83,15 @@ export default function App() {
                 />
               ))}
             </div>
-            <div>
+            <div className="text-center md:text-left">
+              <img
+                src="/assets/logo-cha-com-a-rainha.webp"
+                alt=""
+                width="612"
+                height="660"
+                className="mx-auto mb-5 h-40 w-auto md:mx-0"
+                loading="lazy"
+              />
               <H2>{c.oQueE.titulo}</H2>
               <div className="mt-5 space-y-4 leading-relaxed text-ivory/85">
                 {c.oQueE.texto.map((t) => <p key={t}>{t}</p>)}
