@@ -36,6 +36,19 @@ export const captura = {
     'Como ampliar seus ganhos com a intermediação imobiliária e de crédito.',
   ],
 
+  oQueE: {
+    titulo: 'O que é o Chá com a Rainha do Crédito',
+    texto: [
+      'É um encontro presencial em Palmas, em clima de café, onde Eliane Moreira senta com um grupo pequeno e abre o jogo sobre crédito.',
+      'Nada de palestra engessada. É conversa direta, com exemplos reais e espaço pra você tirar as suas dúvidas na hora.',
+      'Esta edição é dedicada a corretores de imóveis.',
+    ],
+    fotos: [
+      { src: '/assets/cha-eliane-evento.webp', alt: 'Eliane Moreira, de vestido verde e faixa de Rainha do Crédito, em uma edição do Chá com a Rainha' },
+      { src: '/assets/cha-sala.webp', alt: 'Sala cheia em uma edição do Chá com a Rainha do Crédito, com mesas postas e o telão do evento ao fundo' },
+    ],
+  },
+
   expert: {
     chamada: 'Quem conduz o encontro',
     nome: 'Eliane Moreira',

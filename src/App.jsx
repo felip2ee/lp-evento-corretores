@@ -23,7 +23,7 @@ export default function App() {
     <div className="min-h-screen bg-background text-ivory">
       <div className="noise-overlay" aria-hidden="true" />
 
-      <Hero eyebrow={c.eyebrow} titulo={c.titulo} tituloDestaque={c.tituloDestaque}>
+      <Hero eyebrow={c.eyebrow} fotoAlt={c.expert.fotoAlt} titulo={c.titulo} tituloDestaque={c.tituloDestaque}>
         <p className="hero-in-2 mt-4 inline-block rounded-full bg-accent px-4 py-1.5 font-display text-xs font-extrabold uppercase tracking-wide text-dark sm:text-sm">
           {c.selo}
         </p>
@@ -66,27 +66,39 @@ export default function App() {
         </Container>
       </section>
 
-      {/* ============================ EXPERT ============================ */}
-      <section className="overflow-hidden pb-14 md:pb-20">
+      {/* ======================== O QUE É O CHÁ ======================== */}
+      <section className="pb-14 md:pb-20">
         <Container>
-          <div className="mx-auto grid max-w-4xl items-center gap-6 md:grid-cols-2 md:gap-10">
-            <div className="mx-auto w-full max-w-md">
-              <img
-                src="/assets/eliane-hero.webp"
-                alt={c.expert.fotoAlt}
-                width="2000"
-                height="1227"
-                className="photo-fade w-full object-contain"
-                loading="lazy"
-              />
+          <div className="mx-auto grid max-w-4xl items-center gap-8 md:grid-cols-2 md:gap-10">
+            <div className="grid grid-cols-2 gap-3">
+              {c.oQueE.fotos.map((f) => (
+                <img
+                  key={f.src}
+                  src={f.src}
+                  alt={f.alt}
+                  width="720"
+                  height="960"
+                  className="aspect-[3/4] w-full rounded-2xl border border-accent/30 object-cover object-top"
+                  loading="lazy"
+                />
+              ))}
             </div>
-            <div className="text-center md:text-left">
-              <p className="font-display text-sm font-bold uppercase tracking-wide text-accent">{c.expert.chamada}</p>
-              <H2 className="mt-2">{c.expert.nome}</H2>
-              <p className="mt-1 font-display text-lg font-bold text-ivory/80">{c.expert.titulo}</p>
+            <div>
+              <H2>{c.oQueE.titulo}</H2>
               <div className="mt-5 space-y-4 leading-relaxed text-ivory/85">
-                {c.expert.bio.map((b) => <p key={b}>{b}</p>)}
+                {c.oQueE.texto.map((t) => <p key={t}>{t}</p>)}
               </div>
+            </div>
+          </div>
+
+          {/* Quem conduz: só texto, a foto dela já está no topo */}
+          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-accent/25 bg-primary/40 p-6 sm:p-8">
+            <p className="font-display text-sm font-bold uppercase tracking-wide text-accent">{c.expert.chamada}</p>
+            <p className="mt-2 font-display text-2xl font-extrabold text-white">
+              {c.expert.nome} <span className="text-ivory/70">· {c.expert.titulo}</span>
+            </p>
+            <div className="mt-4 space-y-3 leading-relaxed text-ivory/85">
+              {c.expert.bio.map((b) => <p key={b}>{b}</p>)}
             </div>
           </div>
         </Container>
