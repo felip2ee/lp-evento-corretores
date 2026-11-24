@@ -1,6 +1,7 @@
 // Toda a copy da página fica aqui. Regra da casa: sem travessão.
 
-export const captura = {
+const imoveis = {
+  evento: 'cha-com-a-rainha-corretores-2026-11-26',
   eyebrow: 'Chá com a Rainha do Crédito',
   titulo: 'Como duplicar suas comissões com crédito',
   tituloDestaque: 'em 2027',
@@ -11,6 +12,8 @@ export const captura = {
 
   form: {
     titulo: 'Garanta o seu lugar',
+    campoEmpresa: 'Imobiliária ou CRECI',
+    campoEmpresaErro: 'Informe a imobiliária ou o CRECI.',
     cta: 'QUERO PARTICIPAR',
     enviando: 'Enviando...',
     erro: 'Não foi possível enviar agora. Tente de novo ou ligue pra 63 3215-7404.',
@@ -76,7 +79,7 @@ export const captura = {
   fechamentoDestaque: 'Entre sabendo como duplicar suas comissões com ele.',
 };
 
-export const rodape = {
+const rodapeImoveis = {
   marca: 'Rainha do Crédito',
   descricao: 'Crédito imobiliário na prática pra corretores, com Eliane Moreira.',
   aviso: 'Esta página não é de um banco, não concede empréstimos e não garante aprovação de crédito. Quem decide é a instituição financeira.',
@@ -89,3 +92,62 @@ export const rodape = {
     texto: 'Os dados que você informa (nome, WhatsApp e imobiliária ou CRECI) são usados apenas pra confirmar a sua presença e falar com você sobre o evento. Não compartilhamos seus dados com terceiros.',
   },
 };
+
+// ===================== /corretores-de-seguro =====================
+// Mesmo evento, copy voltada pra corretor de seguros. Só o que muda em relação à de imóveis.
+const seguros = {
+  ...imoveis,
+  evento: 'cha-com-a-rainha-corretores-seguro-2026-11-26',
+  selo: 'Edição especial para corretores de seguros',
+  subtitulo: 'Você já tem a carteira e a confiança do cliente. Quando ele precisa de crédito, vai pro banco e você não ganha nada com isso. Venha ver com Eliane Moreira como fazer de 2027 o ano em que o crédito vira uma nova fonte de comissão na sua carteira.',
+
+  form: {
+    ...imoveis.form,
+    campoEmpresa: 'Corretora ou SUSEP',
+    campoEmpresaErro: 'Informe a corretora ou o SUSEP.',
+  },
+
+  dores: [
+    'Sua renda depende da renovação, e todo ano tem cliente trocando de corretor por causa de preço.',
+    'O cliente confia em você, mas na hora de financiar ou pegar crédito vai sozinho pro banco.',
+    'Você indica o gerente de graça e ainda fica com o desgaste quando o crédito é negado.',
+    'Uma carteira cheia de gente que compra casa, carro e investe no negócio, e só o seguro passa por você.',
+  ],
+  doresFecho: 'Seu cliente já toma crédito.',
+  doresFechoDestaque: 'Só que ainda não é com você.',
+
+  temas: [
+    'Como identificar na sua carteira quem precisa de crédito agora.',
+    'Protocolo de aprovação: o que observar antes de encaminhar o crédito.',
+    'Como ampliar seus ganhos somando a intermediação de crédito ao seguro.',
+  ],
+
+  oQueE: {
+    ...imoveis.oQueE,
+    texto: [...imoveis.oQueE.texto.slice(0, 2), 'Esta edição é dedicada a corretores de seguros.'],
+  },
+
+  expert: {
+    ...imoveis.expert,
+    bio: [
+      imoveis.expert.bio[0],
+      'No encontro, ela mostra ao corretor de seguros como o banco enxerga o cliente, pra você saber o que encaminhar e como ganhar com isso.',
+    ],
+  },
+
+  fechamento: 'Não entre em 2027 deixando o crédito da sua carteira na mão do banco.',
+};
+
+const rodapeSeguros = {
+  ...rodapeImoveis,
+  descricao: 'Crédito na prática pra corretores, com Eliane Moreira.',
+  privacidade: {
+    ...rodapeImoveis.privacidade,
+    texto: rodapeImoveis.privacidade.texto.replace('imobiliária ou CRECI', 'corretora ou SUSEP'),
+  },
+};
+
+// A página é escolhida pelo endereço: / (imóveis) ou /corretores-de-seguro
+const seguro = window.location.pathname.startsWith('/corretores-de-seguro');
+export const captura = seguro ? seguros : imoveis;
+export const rodape = seguro ? rodapeSeguros : rodapeImoveis;

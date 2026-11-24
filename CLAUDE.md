@@ -13,6 +13,12 @@ Página de captura do evento presencial de quinta-feira, 26 de novembro de 2026,
 - **Build (`.env`, versionado):** `VITE_SITE_URL`, domínio público sem barra no fim. Monta a URL absoluta da capa de compartilhamento (`public/og-cha-corretores.jpg`, 1200x630) no `index.html`. Mudou: commit, push e imagem nova.
 - **Dev:** `public/env.js` vem vazio e valem os valores do `.env` local.
 
+## Páginas
+- `/` corretores de imóveis. `/corretores-de-seguro` corretores de seguros (mesmo evento, mesma data).
+- `src/content.js` escolhe a copy pelo endereço: `seguros` é a de `imoveis` com o que muda por cima.
+- Cada página tem o seu `index.html` (`corretores-de-seguro/index.html`) só por causa do título e das tags de compartilhamento; capa própria em `public/og-cha-corretores-seguro.jpg`. O `nginx.conf` entrega o slug sem barra no fim.
+- O webhook recebe `evento` diferente por página (`cha-com-a-rainha-corretores-seguro-2026-11-26`); o campo `imobiliaria` leva a corretora ou SUSEP. O evento do dataLayer é o mesmo.
+
 ## Onde mexer
 - **Toda a copy está em `src/content.js`.**
 - Layout em `src/App.jsx`. Formulário em `src/components/lp/LeadForm.jsx` (evento `lead_evento_corretores` no dataLayer).

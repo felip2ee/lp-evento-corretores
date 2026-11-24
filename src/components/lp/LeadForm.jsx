@@ -28,7 +28,7 @@ export default function LeadForm() {
     const novos = {};
     if (dados.nome.trim().length < 3) novos.nome = 'Informe o seu nome.';
     if (dados.whatsapp.replace(/\D/g, '').length < 10) novos.whatsapp = 'Informe o WhatsApp com DDD.';
-    if (!dados.imobiliaria.trim()) novos.imobiliaria = 'Informe a imobiliária ou o CRECI.';
+    if (!dados.imobiliaria.trim()) novos.imobiliaria = f.campoEmpresaErro;
     setErros(novos);
     if (Object.keys(novos).length) return;
 
@@ -42,7 +42,7 @@ export default function LeadForm() {
           nome: dados.nome.trim(),
           whatsapp: dados.whatsapp.replace(/\D/g, ''),
           imobiliaria: dados.imobiliaria.trim(),
-          evento: 'cha-com-a-rainha-corretores-2026-11-26',
+          evento: captura.evento,
           pagina: window.location.href, // leva junto os UTMs da URL
           enviadoEm: new Date().toISOString(),
         }),
@@ -73,7 +73,7 @@ export default function LeadForm() {
       <p className="text-center font-display text-lg font-extrabold text-white sm:text-xl">{f.titulo}</p>
       <Field label="Nome" id="nome" autoComplete="name" value={dados.nome} onChange={set('nome')} error={erros.nome} />
       <Field label="WhatsApp" id="whatsapp" type="tel" inputMode="numeric" autoComplete="tel-national" placeholder="(63) 99999-9999" value={dados.whatsapp} onChange={set('whatsapp')} error={erros.whatsapp} />
-      <Field label="Imobiliária ou CRECI" id="imobiliaria" autoComplete="organization" value={dados.imobiliaria} onChange={set('imobiliaria')} error={erros.imobiliaria} />
+      <Field label={f.campoEmpresa} id="imobiliaria" autoComplete="organization" value={dados.imobiliaria} onChange={set('imobiliaria')} error={erros.imobiliaria} />
       <Button type="submit" size="block" className="w-full" disabled={estado === 'enviando'}>
         {estado === 'enviando' ? f.enviando : f.cta}
       </Button>
